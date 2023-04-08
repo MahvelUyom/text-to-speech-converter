@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text to Speech</title>
+  <style>
+    body{
+      background: whitesmoke;
+      text-align: center;
+      padding-top: 50%;
+      font-family: sans-serif;
+    }
+    input{
+      padding: .5rem;
+      outline: 0;
+      font-size: 1.5rem;
+      border-radius: 10px;
+      border: 0;
+      background: lightgrey;
+
+    }
+    button{
+      background: grey;
+      padding:.3rem .8rem;
+      border-radius: 10px;
+      font-size: 1.5rem;
+      border: 0;
+      color: white;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  
+<h1>JavaScript Text-to-Speech</h1>
+<input type="text" id="message" placeholder="type here">
+<button onclick="play()">play audio</button>
+
+
+
+<script>
+  const speech = new SpeechSynthesisUtterance
+  function play(){
+    const message = document.getElementById("message").value
+    speech.lang = "en"
+    speech.text = message
+    window.speechSynthesis.speak(speech)
+
+  }
+</script>
+
+</body>
+</html>
